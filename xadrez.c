@@ -7,48 +7,54 @@ void moverRainha(int i);
 void moverCavalo(int i);
 
 int main() {
-    int i = 0;
-    // const int torre = 5;
-    // const int bispo = 5;
-    // const int rainha = 8;
+    const int torre = 5;
+    const int bispo = 5;
+    const int rainha = 8;
 
     // Chama as funções que simulam as peças se movendo para a direção pré definida
-    moverTorre(i);
-    moverBispo(i);
-    moverRainha(i);
-    moverCavalo(i);
+    printf("Movendo a Torre\n");
+    moverTorre(torre);
+
+    printf("Movendo o Bispo\n");
+    moverBispo(bispo);
+
+    printf("Movendo a Rainha\n");
+    moverRainha(rainha);
+
+    printf("Movendo o Cavalo\n");
+    moverCavalo(0);
 
     return 0;
 }
 
 // Função para simular a Torre se movendo
 void moverTorre(int i) {
-    printf("Movendo a Torre\n");
-    while(i < 5) {
-        printf("Esquerda\n");
-        i++;
+    if(i < 1) {
+        return;
     }
+    printf("Direita\n");
+    return moverTorre(i - 1);
 }
 
 // Função para simular o Bispo se movendo
 void moverBispo(int i) {
-    printf("Movendo o Bispo\n");
-    do {
-        printf("Cima, Direita\n");
-        i++;
-    } while(i < 5);
+    if(i < 1) {
+        return;
+    }
+    printf("Cima, Direita\n");
+    return moverBispo(i - 1);
 }
 
 // Função para simular a Rainha se movendo
 void moverRainha(int i) {
-    printf("Movendo a Rainha\n");
-    for(i = 0; i < 8; i++) {
-        printf("Esquerda\n");
+    if(i < 1) {
+        return;
     }
+    printf("Esquerda\n");
+    return moverRainha(i - 1);
 }
 
 void moverCavalo(int i) {
-    printf("Movendo o Cavalo\n");
     do {
         for(i = 0; i < 2; i++) {
             printf("Baixo\n");
