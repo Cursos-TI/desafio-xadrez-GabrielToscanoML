@@ -4,6 +4,7 @@
 void moverTorre(int i);
 void moverBispo(int i);
 void moverRainha(int i);
+void moverCavalo(int i);
 
 int main() {
     int i = 0;
@@ -15,6 +16,7 @@ int main() {
     moverTorre(i);
     moverBispo(i);
     moverRainha(i);
+    moverCavalo(i);
 
     return 0;
 }
@@ -43,4 +45,15 @@ void moverRainha(int i) {
     for(i = 0; i < 8; i++) {
         printf("Esquerda\n");
     }
+}
+
+void moverCavalo(int i) {
+    printf("Movendo o Cavalo\n");
+    do {
+        for(i = 0; i < 2; i++) {
+            printf("Baixo\n");
+        }
+        printf("Esquerda\n");
+        i++;
+    } while(i < 1);
 }
